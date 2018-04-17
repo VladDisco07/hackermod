@@ -6,7 +6,7 @@ const token = "NDM0Njc5MTg1NjYzODUyNTQ0.DbN-cw.2fuysj6vV8OzRvJQG9-ALFwUEQ4";
 
 client.on("ready", () => {
     console.log("Pregatit!")
-    client.user.setPresence({ game: { name: 'my self :(', type: 3 } });
+    client.user.setPresence({ game: { name: '!help | 1 server, pentru ca voi fi doar in acest server ;)', type: 3 } });
 });
 
 const prefix = "!"
