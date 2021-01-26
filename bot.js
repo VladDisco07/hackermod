@@ -1,8 +1,10 @@
+//outdated (editing this in 2021)
+
 const Discord = require(`discord.js`)
 const client = new Discord.Client()
 const prefix = "!"
 const bot = new Discord.Client()
-const token = "NDM0NzI3NzU2OTc5MjQwOTYw.DbO4Uw.IsC9Of4N_L6vQ8tnD5IIdQONWmg"
+const token = "no"
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
